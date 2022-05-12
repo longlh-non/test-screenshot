@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <screen-shot/>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -31,7 +32,11 @@
 </template>
 
 <script>
+import ScreenShot from './screen-shot.vue'
 export default {
+  components: {
+    ScreenShot
+  },
   name: 'HelloWorld',
   props: {
     msg: String
