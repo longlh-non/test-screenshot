@@ -24,6 +24,7 @@ import html2canvas from 'html2canvas'
 
 var test
 export default {
+emits: ['setDefaultScreenShotStatus'],
   data() { return {
 mouseIsDown: false,
     isDragging: false, 
@@ -223,6 +224,8 @@ mouseIsDown: false,
 
       this.imageUrl = croppedCanvas.toDataURL();
       console.log(this.imageUrl)
+      debugger
+      this.$emit('setDefaultScreenShotStatus')
     });
           
 

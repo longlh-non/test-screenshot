@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-    <screen-shot/>
+    <screen-shot v-if="screenShotTaking" @setDefaultScreenShotStatus="setDefaultScreenShotStatus"/>
+    <button class="button-screenshot" @click="handleScreenShotClick">
+      Take a screenshot
+    </button>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -40,7 +43,26 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      screenShotTaking: false
+    }
+  },
+methods: {
+  handleScreenShotClick() {
+    const me = this
+
+    me.screenShotTaking = true
+  },
+
+  setDefaultScreenShotStatus() {
+    const me = this
+    // eslint-disable-next-line no-debugger
+    debugger
+    me.screenShotTaking = false
   }
+}
 }
 </script>
 
